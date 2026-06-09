@@ -41,7 +41,7 @@
 
 // DWT-Einheit aktivieren
 //----------------------------------------------------------------------
-void DWT_Init(void)
+void DWT_Init (void)
 {
 	ITM -> LAR = 0xC5ACCE55;
 //	ITM -> TCR |= ITM_TCR_DWTENA_Msk;
@@ -54,7 +54,7 @@ void DWT_Init(void)
 
 // DWT-Einheit aktivieren
 //----------------------------------------------------------------------
-void DWT_Enable(void)
+void DWT_Enable (void)
 {
 	CoreDebug -> DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;						// 0x01000000
 }
@@ -62,7 +62,7 @@ void DWT_Enable(void)
 
 // DWT-Einheit deaktivieren
 //----------------------------------------------------------------------
-void DWT_Disable(void)
+void DWT_Disable (void)
 {
 	CoreDebug -> DEMCR &= ~CoreDebug_DEMCR_TRCENA_Msk;						// ~0x01000000
 }
@@ -70,7 +70,7 @@ void DWT_Disable(void)
 
 //Schalte DWT ein
 //----------------------------------------------------------------------
-void DWT_CycCounterEn()
+void DWT_CycCounterEn (void)
 {
 	DWT -> CTRL |= DWT_CTRL_CYCCNTENA_Msk;									// 0x00000001
 }
@@ -78,7 +78,7 @@ void DWT_CycCounterEn()
 
 // Schalte DWT aus
 //----------------------------------------------------------------------
-void DWT_CycCounterDis(void)
+void DWT_CycCounterDis (void)
 {
 	DWT -> CTRL &= ~DWT_CTRL_CYCCNTENA_Msk;									// ~0x00000001
 }
@@ -86,7 +86,7 @@ void DWT_CycCounterDis(void)
 
 // Lese DWT Zaehlerstand
 //----------------------------------------------------------------------
-uint32_t DWT_CycCounterRead(void)
+uint32_t DWT_CycCounterRead (void)
 {
 	return DWT -> CYCCNT;
 }
@@ -94,7 +94,7 @@ uint32_t DWT_CycCounterRead(void)
 
 // Loesche DWT Zaehlerstand
 //----------------------------------------------------------------------
-void DWT_CycCounterClear(void)
+void DWT_CycCounterClear (void)
 {
 	DWT -> CYCCNT = 0;
 }
