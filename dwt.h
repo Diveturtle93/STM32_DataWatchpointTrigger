@@ -43,10 +43,10 @@
 
 // Version definieren
 //----------------------------------------------------------------------
-#define DWT_MAJOR								0
+#define DWT_MAJOR								1
 #define DWT_MINOR								0
 #define DWT_PATCH								0
-#define DWT_DEV									1
+#define DWT_DEV									0
 //----------------------------------------------------------------------
 
 // Funktionen definieren
